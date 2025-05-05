@@ -1,9 +1,9 @@
-import { Entity } from "@/domain/entities/entity"
-import { Slug } from "./value-objects/slug"
-import { UniqueEntityID } from "@/domain/entities/unique-entity-id"
-import { Optional } from "@/domain/types/optional"
-import dayjs from "dayjs"
- 
+import { Entity } from './entity'
+import { Slug } from './value-objects/slug'
+import { UniqueEntityID } from './unique-entity-id'
+import { Optional } from '@/domain/types/optional'
+import dayjs from 'dayjs'
+
 interface QuestionProps {
   authorId: UniqueEntityID
   bestAnswerId?: UniqueEntityID
@@ -48,10 +48,7 @@ export class Question extends Entity<QuestionProps> {
   }
 
   get excerpt() {
-    return this.content
-      .substring(0, 120)
-      .trimEnd()
-      .concat('...')
+    return this.content.substring(0, 120).trimEnd().concat('...')
   }
 
   private touch() {
@@ -77,14 +74,17 @@ export class Question extends Entity<QuestionProps> {
 
   static create(
     props: Optional<QuestionProps, 'createdAt' | 'slug'>,
-    id?: UniqueEntityID
-   ) {
-     const question = new Question({
-       ...props,
-       slug: props.slug ?? Slug.createFromText(props.title),
-       createdAt: new Date(),
-     }, id)
- 
-     return question
-   }
- }
+    id?: UniqueEntityID,
+  ) {
+    const question = new Question(
+      {
+        ...props,
+        slug: props.slug ?? Slug.createFromText(props.title),
+        createdAt: new Date(),
+      },
+      id,
+    )
+
+    return question
+  }
+}
