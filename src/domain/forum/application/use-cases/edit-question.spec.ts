@@ -1,10 +1,10 @@
-import { EditQuestionUseCase } from "./edit-question";
-import { InMemoryQuestionsRepository } from "test/repository/in-memory-questions-repository";
-import { makeQuestion } from "test/factory/make-question";
-import { UniqueEntityID } from "@/core/entities/unique-entity-id";
-import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error';
-import { InMemoryQuestionAttachmentsRepository } from 'test/repository/in-memory-question-attachments-repository';
-import { makeQuestionAttachment } from 'test/factory/make-question-attachments';
+import { EditQuestionUseCase } from './edit-question'
+import { InMemoryQuestionsRepository } from 'test/repository/in-memory-questions-repository'
+import { makeQuestion } from 'test/factory/make-question'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error'
+import { InMemoryQuestionAttachmentsRepository } from 'test/repository/in-memory-question-attachments-repository'
+import { makeQuestionAttachment } from 'test/factory/make-question-attachments'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
@@ -17,7 +17,7 @@ describe('Edit Question', () => {
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
       inMemoryQuestionAttachmentsRepository,
     )
-    
+
     sut = new EditQuestionUseCase(
       inMemoryQuestionsRepository,
       inMemoryQuestionAttachmentsRepository,

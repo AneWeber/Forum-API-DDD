@@ -1,8 +1,8 @@
-import { InMemoryQuestionsRepository } from "test/repository/in-memory-questions-repository";
-import { makeQuestion } from "test/factory/make-question";
-import { InMemoryQuestionCommentsRepository } from "test/repository/in-memory-question-comments-repository";
-import { CommentOnQuestionUseCase } from "./comment-on-question";
-import { InMemoryQuestionAttachmentsRepository } from "test/repository/in-memory-question-attachments-repository";
+import { InMemoryQuestionsRepository } from 'test/repository/in-memory-questions-repository'
+import { makeQuestion } from 'test/factory/make-question'
+import { InMemoryQuestionCommentsRepository } from 'test/repository/in-memory-question-comments-repository'
+import { CommentOnQuestionUseCase } from './comment-on-question'
+import { InMemoryQuestionAttachmentsRepository } from 'test/repository/in-memory-question-attachments-repository'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository

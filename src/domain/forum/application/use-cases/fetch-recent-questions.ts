@@ -1,5 +1,5 @@
-import { Question } from "../../enterprise/entities/question";
-import { QuestionsRepository } from "../repositories/question-repository";
+import { Question } from '../../enterprise/entities/question'
+import { QuestionsRepository } from '../repositories/question-repository'
 import { Either, right } from '@/core/either'
 
 interface FetchRecentQuestionsUseCaseRequest {

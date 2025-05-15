@@ -1,9 +1,9 @@
-import { QuestionsRepository } from "../repositories/question-repository";
-import { UniqueEntityID } from "@/core/entities/unique-entity-id";
-import { QuestionComment } from "../../enterprise/entities/question-comment";
-import { QuestionCommentsRepository } from "../repositories/question-comments-repository";
+import { QuestionsRepository } from '../repositories/question-repository'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { QuestionComment } from '../../enterprise/entities/question-comment'
+import { QuestionCommentsRepository } from '../repositories/question-comments-repository'
 import { Either, right, left } from '@/core/either'
-import { ResourceNotFoundError } from "./errors/resource-not-found-error";
+import { ResourceNotFoundError } from './errors/resource-not-found-error'
 
 interface CommentOnQuestionUseCaseRequest {
   authorId: string
@@ -43,7 +43,7 @@ export class CommentOnQuestionUseCase {
 
     await this.questionCommentsRepository.create(questionComment)
 
-    return right ({
+    return right({
       questionComment,
     })
   }

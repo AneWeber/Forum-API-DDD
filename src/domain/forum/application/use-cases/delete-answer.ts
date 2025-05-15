@@ -1,5 +1,5 @@
 import { Either, left, right } from '@/core/either'
-import { AnswersRepository } from "../repositories/answers-repository";
+import { AnswersRepository } from '../repositories/answers-repository'
 import { ResourceNotFoundError } from '@/domain/forum/application/use-cases/errors/resource-not-found-error'
 import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error'
 
@@ -10,7 +10,7 @@ interface DeleteAnswerUseCaseRequest {
 
 type DeleteAnswerUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  {}
+  null
 >
 
 export class DeleteAnswerUseCase {
@@ -32,6 +32,6 @@ export class DeleteAnswerUseCase {
 
     await this.answersRepository.delete(answer)
 
-    return right({})
+    return right(null)
   }
 }

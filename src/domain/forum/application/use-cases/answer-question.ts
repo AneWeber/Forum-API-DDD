@@ -33,7 +33,7 @@ export class AnswerQuestionUseCase {
       authorId: new UniqueEntityID(instructorId),
       questionId: new UniqueEntityID(questionId),
     })
-    
+
     const answerAttachments = attachmentsIds.map((attachmentId) => {
       return AnswerAttachment.create({
         attachmentId: new UniqueEntityID(attachmentId),

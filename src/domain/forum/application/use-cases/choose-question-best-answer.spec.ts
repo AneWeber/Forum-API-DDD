@@ -1,9 +1,9 @@
-import { InMemoryAnswersRepository } from "test/repository/in-memory-answers-repository";
-import { makeAnswer } from "test/factory/make-answer";
-import { UniqueEntityID } from "@/core/entities/unique-entity-id";
-import { InMemoryQuestionsRepository } from "test/repository/in-memory-questions-repository";
-import { ChooseQuestionBestAnswerUseCase } from "./choose-question-best-answer";
-import { makeQuestion } from "test/factory/make-question";
+import { InMemoryAnswersRepository } from 'test/repository/in-memory-answers-repository'
+import { makeAnswer } from 'test/factory/make-answer'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { InMemoryQuestionsRepository } from 'test/repository/in-memory-questions-repository'
+import { ChooseQuestionBestAnswerUseCase } from './choose-question-best-answer'
+import { makeQuestion } from 'test/factory/make-question'
 import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repository/in-memory-answer-attachments-repository'
 import { InMemoryQuestionAttachmentsRepository } from 'test/repository/in-memory-question-attachments-repository'

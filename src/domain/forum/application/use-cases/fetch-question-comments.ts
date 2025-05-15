@@ -26,7 +26,7 @@ export class FetchQuestionCommentsUseCase {
         page,
       })
 
-      return right({
+    return right({
       questionComments,
     })
   }

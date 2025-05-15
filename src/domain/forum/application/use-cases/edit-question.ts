@@ -1,8 +1,8 @@
 import { Either, left, right } from '@/core/either'
 import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error'
 import { ResourceNotFoundError } from '@/domain/forum/application/use-cases/errors/resource-not-found-error'
-import { QuestionsRepository } from "../repositories/question-repository"
-import { Question } from "../../enterprise/entities/question"
+import { QuestionsRepository } from '../repositories/question-repository'
+import { Question } from '../../enterprise/entities/question'
 import { QuestionAttachmentsRepository } from '@/domain/forum/application/repositories/question-attachments-repository'
 import { QuestionAttachmentList } from '@/domain/forum/enterprise/entities/question-attachment-list'
 import { QuestionAttachment } from '@/domain/forum/enterprise/entities/question-attachment'
@@ -34,7 +34,7 @@ export class EditQuestionUseCase {
     questionId,
     title,
     content,
-        attachmentsIds,
+    attachmentsIds,
   }: EditQuestionUseCaseRequest): Promise<EditQuestionUseCaseResponse> {
     const question = await this.questionsRepository.findById(questionId)
 
@@ -60,7 +60,7 @@ export class EditQuestionUseCase {
       })
     })
 
-  questionAttachmentList.update(questionAttachments)
+    questionAttachmentList.update(questionAttachments)
 
     question.attachments = questionAttachmentList
     question.title = title

@@ -19,7 +19,7 @@ describe('Get Question By Slug', () => {
   })
 
   it('should be able to get a question by slug', async () => {
-      const newQuestion = makeQuestion({
+    const newQuestion = makeQuestion({
       slug: Slug.create('example-question'),
     })
 
